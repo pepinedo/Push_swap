@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 16:18:02 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/11 16:18:04 by ppinedo-         ###   ########.fr       */
+/*   Created: 2024/01/11 16:56:03 by ppinedo-          #+#    #+#             */
+/*   Updated: 2024/01/11 16:56:19 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
-int main(int argc, char **argv)
+size_t	ft_strlen(const char *str)
 {
-    t_stack_node    *a;
-    t_stack_node    *b;
+	int	i;
 
-    a = NULL;
-    b = NULL;
-    if (1 == argc || (2 == argc && !argv[1][0]))
-        return (1);
-    else if (2 == argc)
-        argv = ft_split(argv[1], ' ');
-    
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
