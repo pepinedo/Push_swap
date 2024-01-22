@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:18:08 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/11 16:54:19 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/22 10:52:07 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,4 @@ char	**ft_split(char const *s, char separator)
 		return (0);
 	ft_splitaux(splits, s, separator);
 	return (splits);
-}
-
-int main(int argc, char** argv)
-{
-	if (argc != 2)
-	{
-		printf("error");
-		return(0);
-	}
-	ft_split(argv[1], ' ');	
 }
