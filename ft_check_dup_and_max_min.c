@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_join_split.c                                    :+:      :+:    :+:   */
+/*   ft_check_dup_and_max_min.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 16:36:40 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/23 12:05:15 by ppinedo-         ###   ########.fr       */
+/*   Created: 2024/01/22 16:03:08 by ppinedo-          #+#    #+#             */
+/*   Updated: 2024/01/23 11:29:20 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**ft_join_split(char **arguments)
+long		*ft_check_dup_and_max_min(long *numbers)
 {
-	char*	temp;
-	int		i;
-	
-	i = 1;
-	temp = arguments[i];
-	while (arguments[i + 1])
+	int i;
+	int j;
+
+	i = 0;
+	j = 1;
+	while (numbers[i])
 	{
-		temp = ft_strjoin(temp, " ");
-		temp = ft_strjoin(temp, arguments[++i]);
+		while (numbers[j])
+		{
+			if (numbers[i] == numbers[j])
+				ft_exit();
+			else
+				j++;
+		}
+		i++;
+		j = i + 1;
 	}
-	ft_isallnum(temp);
-	arguments = ft_split(temp, ' ');
-	return (arguments);
+	i = 0;
+	while (numbers[i])
+	{
+		if (numbers[i] >= INT_MAX || numbers[i] <= INT_MIN) 
+			ft_exit();
+		i++;
+	}
+	return (numbers);
 }

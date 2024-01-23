@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_join_split.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 16:36:40 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/23 12:05:15 by ppinedo-         ###   ########.fr       */
+/*   Created: 2024/01/23 12:40:03 by ppinedo-          #+#    #+#             */
+/*   Updated: 2024/01/23 18:40:58 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**ft_join_split(char **arguments)
+t_stack_node	*ft_lstnew(long number)
 {
-	char*	temp;
-	int		i;
-	
-	i = 1;
-	temp = arguments[i];
-	while (arguments[i + 1])
-	{
-		temp = ft_strjoin(temp, " ");
-		temp = ft_strjoin(temp, arguments[++i]);
-	}
-	ft_isallnum(temp);
-	arguments = ft_split(temp, ' ');
-	return (arguments);
+	t_stack_node	*new;
+
+	new = (t_stack_node *)ft_calloc(1, sizeof(t_stack_node));
+	if (new == NULL)
+		return (NULL);
+	new->value = number;
+	return (new);
 }
