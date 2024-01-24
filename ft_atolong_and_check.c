@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:33:00 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/23 16:48:28 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:07:30 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_numbers   *ft_atolong_and_check(char **arguments, t_numbers *numbers)
 	i = 0;
     while (arguments[i])
         i++;
-    numbers = (t_numbers *)ft_calloc(sizeof(t_stack_node), 1);
+    numbers = (t_numbers *)malloc(sizeof(t_numbers));
     numbers->len = i;
     numbers->value = ft_calloc(i, sizeof(int));
     i = 0;
@@ -29,5 +29,10 @@ t_numbers   *ft_atolong_and_check(char **arguments, t_numbers *numbers)
         i++;
     }
 	numbers->value = ft_check_dup_and_max_min(numbers->value);
+    i = 0;
+    while (i < numbers->len)
+    {
+        printf("Num %li\n", numbers->value[i++]);
+    }
 	return (numbers);
 }

@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:40:03 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/23 18:40:58 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/24 12:53:54 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_stack_node	*ft_lstnew(long number)
 	new = (t_stack_node *)ft_calloc(1, sizeof(t_stack_node));
 	if (new == NULL)
 		return (NULL);
-	new->value = number;
+	new->value = (int)number;
+	new->next = NULL;
 	return (new);
 }

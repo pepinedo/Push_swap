@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:18:02 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/23 18:32:22 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:45:25 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main(int argc, char **argv)
 {
-    t_stack_node    *a;
-    t_stack_node    *b;
-    t_numbers       *numbers;
+    t_stack_node    **a;
+    t_stack_node    **b;
+    t_numbers       **numbers;
 
     b = NULL;
     numbers = NULL;
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 
     while (a != NULL)
     {
-        printf("NUMERO FINAL : %li\n", a->value);
+        printf("NUMERO FINAL : %i\n", a->value);
         a = a->next;
     }
     return (0); 
