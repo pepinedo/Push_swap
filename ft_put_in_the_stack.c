@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_in_the_stack.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jorvarea <jorvarea@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:33:06 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/24 12:49:25 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:09:33 by jorvarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ t_stack_node	*ft_put_in_the_stack(t_stack_node *a, t_numbers *numbers)
 	}
 	
 	a = ft_lstnew(numbers->value[0]);
+	i = 0;
+	while (i < numbers->len)
+	{
+		printf("NUMERO QUE ENTRA despues : %ld\n", numbers->value[i]);
+		i++;
+	}
 	i = 1;
 	printf("len : %d\n", numbers->len);
 	while(i < numbers->len)
