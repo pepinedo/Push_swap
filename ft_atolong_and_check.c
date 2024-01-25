@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atolong_and_check.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jorvarea <jorvarea@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:33:00 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/24 13:07:30 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:50:44 by jorvarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 t_numbers   *ft_atolong_and_check(char **arguments, t_numbers *numbers)
 {
 	int     i;
-    ;
 	i = 0;
     while (arguments[i])
         i++;

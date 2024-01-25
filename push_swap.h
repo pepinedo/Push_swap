@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jorvarea <jorvarea@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:17:51 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/24 18:33:51 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:50:49 by jorvarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void      	    ft_isallnum(char* array);
 long    	    ft_atolong(const char *str);
 void    	    ft_exit();
 int	            ft_isdigit(int a);
+int	            ft_atoi(const char *str);
+void	        ft_checkdup(int *numbers);
 char    	    **ft_join_split(char **arguments);
 char    	    *ft_strjoin(char const *s1, char *s2);
 long    		*ft_check_dup_and_max_min(long *numbers);
