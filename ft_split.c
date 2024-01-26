@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:18:08 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/26 10:30:58 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/26 12:58:42 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ char	**ft_split(char const *s, char separator)
 	char	**splits;
 
 	splits = (char **)malloc(sizeof(char *) * (ft_wordscount(s, separator) + 1));
-	if (splits == 0)
-		return (0);
+	if (splits == NULL)
+		return (NULL);
 	ft_splitaux(splits, s, separator);
 	return (splits);
 }

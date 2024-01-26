@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:18:02 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/26 12:16:05 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/26 13:43:09 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int main(int argc, char **argv)
     numbers = ft_atolong_and_check(argv); 
     a = ft_put_in_the_stack(numbers);
 
-    while (a != NULL)
-    {
-        printf("NUMERO FINAL : %i\n", a->value);
-        a = a->next;
-    }
+    // while (a != NULL)
+    // {
+    //     printf("NUMERO FINAL : %i\n", a->value);
+    //     a = a->next;
+    // }
     return (0); 
 }

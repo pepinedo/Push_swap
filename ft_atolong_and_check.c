@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:33:00 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/26 12:13:04 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/26 13:20:42 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,12 @@ t_numbers   *ft_atolong_and_check(char **arguments)
         numbers->value[i] = ft_atolong(arguments[i]);
         i++;
     }
-    ft_no_dup(numbers->value);
-	ft_check_max_min_int(numbers->value);
-    i = 0;
+    i = ft_no_dup(numbers->value);
+	i = ft_check_max_min_int(numbers->value);
+    if (i == 0)
+    {
+        numbers = ft_free_numbers(numbers);
+        ft_exit();
+    }
 	return (numbers);
 }

@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_join_split.c                                    :+:      :+:    :+:   */
+/*   ft_free_numbers.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 16:36:40 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/26 13:06:04 by ppinedo-         ###   ########.fr       */
+/*   Created: 2024/01/26 13:12:33 by ppinedo-          #+#    #+#             */
+/*   Updated: 2024/01/26 13:28:29 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**ft_join_split(char **arguments)
+t_numbers	*ft_free_numbers(t_numbers *numbers)
 {
-	char*	temp;
-	int		i;
-	
-	i = 1;
-	temp = arguments[i];
-	while (arguments[i + 1])
-	{
-		temp = ft_strjoin(temp, " ");
-		temp = ft_strjoin(temp, arguments[++i]);
-	}
-	if (ft_isallnum(temp) == 0)
-	{
-		free(temp);
-		ft_exit();
-	}
-	arguments = ft_split(temp, ' ');
-	return (arguments);
+	free(numbers->value);
+	free (numbers);
+	return (NULL);
 }
