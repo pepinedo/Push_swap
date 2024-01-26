@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:18:02 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/24 15:45:25 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/26 12:16:05 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int main(int argc, char **argv)
 {
-    t_stack_node    **a;
-    t_stack_node    **b;
-    t_numbers       **numbers;
+    t_stack_node    *a;
+    t_stack_node    *b;
+    t_numbers       *numbers;
 
+    a = NULL;
     b = NULL;
     numbers = NULL;
     if (argc == 1)
@@ -28,8 +29,8 @@ int main(int argc, char **argv)
         argv = ft_argc2_split(argv[1]);
     else if (argc > 2)
         argv = ft_join_split(argv);
-    numbers = ft_atolong_and_check(argv, numbers); 
-    a = ft_put_in_the_stack(NULL, numbers);
+    numbers = ft_atolong_and_check(argv); 
+    a = ft_put_in_the_stack(numbers);
 
     while (a != NULL)
     {

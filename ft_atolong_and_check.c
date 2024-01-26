@@ -6,33 +6,33 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:33:00 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/24 13:07:30 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/26 12:13:04 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_numbers   *ft_atolong_and_check(char **arguments, t_numbers *numbers)
+t_numbers   *ft_atolong_and_check(char **arguments)
 {
-	int     i;
-    ;
+	int         i;
+    t_numbers   *numbers;
+
 	i = 0;
     while (arguments[i])
         i++;
-    numbers = (t_numbers *)malloc(sizeof(t_numbers));
+    numbers = (t_numbers *)ft_calloc(sizeof(t_numbers), 1);
+    if (numbers == NULL)
+        return (NULL);
     numbers->len = i;
-    numbers->value = ft_calloc(i, sizeof(int));
+    numbers->value = ft_calloc(i, sizeof(long));
     i = 0;
     while (arguments[i])
     {
         numbers->value[i] = ft_atolong(arguments[i]);
         i++;
     }
-	numbers->value = ft_check_dup_and_max_min(numbers->value);
+    ft_no_dup(numbers->value);
+	ft_check_max_min_int(numbers->value);
     i = 0;
-    while (i < numbers->len)
-    {
-        printf("Num %li\n", numbers->value[i++]);
-    }
 	return (numbers);
 }

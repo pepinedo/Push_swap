@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:18:08 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/22 10:52:07 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/26 10:30:58 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	ft_freeall(char **s)
 	free(s);
 }
 
-void	ft_splitaux(char **splits, char const *s, char c)
+static void	ft_splitaux(char **splits, char const *s, char c)
 {
 	int		i;
 	int		start;

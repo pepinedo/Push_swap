@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:17:51 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/24 18:33:51 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/26 12:02:12 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 typedef struct s_stack_node
 {
-    long                value;
+    int                value;
     struct s_stack_node *next;
 }       t_stack_node;
 
@@ -42,12 +42,16 @@ void    	    ft_exit();
 int	            ft_isdigit(int a);
 char    	    **ft_join_split(char **arguments);
 char    	    *ft_strjoin(char const *s1, char *s2);
-long    		*ft_check_dup_and_max_min(long *numbers);
 void    	    *ft_calloc(size_t count, size_t size);
-t_numbers       *ft_atolong_and_check(char **arguments, t_numbers *numbers);
+t_numbers       *ft_atolong_and_check(char **arguments);
+
+//*** Checkers
+void	        ft_no_dup(long *numbers);
+void    		ft_check_max_min_int(long *numbers);
+int	            ft_isdigit(int a);
 
 //*** Lists functions in the parsec
-t_stack_node    *ft_put_in_the_stack(t_stack_node *a, t_numbers *numbers);
+t_stack_node    *ft_put_in_the_stack(t_numbers *numbers);
 t_stack_node	*ft_lstnew(long number);
 void            ft_lstnewnode(t_stack_node *a, long number);
 

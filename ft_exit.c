@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:03:44 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/22 15:05:58 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/26 12:19:09 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_exit()
 {
-    write(2, "Error\n", 6);
+    write(2, "Error, invalid arguments\n", 25);
     exit (1);
 }
