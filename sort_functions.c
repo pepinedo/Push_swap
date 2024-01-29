@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:45:45 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 13:33:12 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/29 17:00:13 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,26 @@ bool	ft_stack_sorted(t_stack_node *a)
 		a = a->next;
 	}
 	return (true);
+}
+
+t_stack_node	*find_min(t_stack_node *stack)
+{
+	long			min;
+	t_stack_node	*min_node;
+
+	if (!stack)
+		return (NULL);
+	min = LONG_MAX;
+	while (stack)
+	{
+		if (stack->value > min)
+		{
+			min = stack->value; 
+			min_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (min_node);
 }
 
 t_stack_node	*find_max(t_stack_node *stack)
