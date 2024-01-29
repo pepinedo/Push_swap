@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 10:19:12 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/26 13:08:00 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/26 14:07:59 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isallnum(char* array)
 	i = 0;
 	while (array[i] != '\0')
 	{
-		if (((array[i] >= 48 && array[i] <= 57) && (array[i + 1] != '-' && array[i + 1] != '+'))
+		if (((array[i] >= 48 && array[i] <= 57))
 			|| (array[i] == ' ') ||
 			((array[i] == '-' || array[i] == '+') && (array[i + 1] >= 48 && array[i + 1] <= 57)))
 			i++;

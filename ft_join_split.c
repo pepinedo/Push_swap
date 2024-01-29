@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 16:36:40 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/26 13:06:04 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/29 11:47:14 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ char	**ft_join_split(char **arguments)
 		ft_exit();
 	}
 	arguments = ft_split(temp, ' ');
+	if (arguments == NULL)
+		return (free(arguments), NULL);
 	return (arguments);
 }

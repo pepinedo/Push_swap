@@ -6,36 +6,32 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:18:02 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/26 13:43:09 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:30:12 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
+static void ft_printea_stacks(t_stack_node *a)
+{
+    while (a != NULL)
+    {
+        printf("NUMERO : %i\n", a->value);
+        a = a->next;
+    }
+}
+
 int main(int argc, char **argv)
 {
     t_stack_node    *a;
     t_stack_node    *b;
-    t_numbers       *numbers;
-
+    
     a = NULL;
     b = NULL;
-    numbers = NULL;
-    if (argc == 1)
-        return (1);
-    else if (argc == 2 && !argv[1][0])
-        ft_exit();
-    else if (argc == 2)
-        argv = ft_argc2_split(argv[1]);
-    else if (argc > 2)
-        argv = ft_join_split(argv);
-    numbers = ft_atolong_and_check(argv); 
-    a = ft_put_in_the_stack(numbers);
-
-    // while (a != NULL)
-    // {
-    //     printf("NUMERO FINAL : %i\n", a->value);
-    //     a = a->next;
-    // }
+    a = ft_parsec(argc, argv);
+    ft_printea_stacks(a); //el printeo sin ordenar
+    ft_sort_argorithm(a, b);
+    ft_printea_stacks(a); //el printeo ordenado
+    ft_free_stack(&a);
     return (0); 
 }

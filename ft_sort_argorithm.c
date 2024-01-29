@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_in_the_stack.c                              :+:      :+:    :+:   */
+/*   ft_sort_argorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 11:33:06 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 12:33:50 by ppinedo-         ###   ########.fr       */
+/*   Created: 2024/01/29 11:58:31 by ppinedo-          #+#    #+#             */
+/*   Updated: 2024/01/29 13:33:58 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node	*ft_put_in_the_stack(t_numbers *numbers)
+int		ft_lstsize(t_stack_node *lst)
 {
-	int				i;
-	t_stack_node 	*a;
+	int	i;
 
-	a = ft_lstnew(numbers->value[0]);
-	i = 1;
-	while(i < numbers->len)
-		ft_lstnewnode(a, numbers->value[i++]);
-	return (a);
+	i = 0;
+	while (lst != 0)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
+
+void	ft_sort_argorithm(t_stack_node *a, t_stack_node *b)
+{
+	if (!ft_stack_sorted(a))
+	{
+		if (ft_lstsize(a) == 2)
+			sa(a);
+		else if (ft_lstsize(a) == 3)
+			ft_sort_three(a);
+		else
+			ft_turk_algorithm(a, b);	
+	}
+	return (0);
 }

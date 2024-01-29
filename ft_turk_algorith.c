@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_in_the_stack.c                              :+:      :+:    :+:   */
+/*   ft_turk_algorith.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 11:33:06 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 12:33:50 by ppinedo-         ###   ########.fr       */
+/*   Created: 2024/01/29 12:28:47 by ppinedo-          #+#    #+#             */
+/*   Updated: 2024/01/29 13:37:14 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node	*ft_put_in_the_stack(t_numbers *numbers)
+void	ft_turk_algorithm(t_stack_node *a, t_stack_node *b)
 {
-	int				i;
-	t_stack_node 	*a;
+	int	len;
 
-	a = ft_lstnew(numbers->value[0]);
-	i = 1;
-	while(i < numbers->len)
-		ft_lstnewnode(a, numbers->value[i++]);
-	return (a);
+	len = ft_lstsize(a);
 }
