@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 16:07:28 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:47 by ppinedo-         ###   ########.fr       */
+/*   Created: 2024/01/26 13:12:33 by ppinedo-          #+#    #+#             */
+/*   Updated: 2024/01/30 11:42:50 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	*ft_memset(void *b, int c, size_t len)
+void	ft_exit()
 {
-	size_t			i;
-	unsigned char	*aux;
+    write(2, "Error, invalid arguments\n", 25);
+    exit (1);
+}
 
-	i = 0;
-	aux = (unsigned char *)b;
-	while (i < len)
+t_stack_node	*ft_free_stack(t_stack_node *stack)
+{
+	t_stack_node	*temp;
+	while (stack)
 	{
-		aux[i] = (unsigned char)c;
-		i++;
+		temp = stack;
+		free (stack);
+		stack = temp->next;
+		free (temp);
 	}
-	return ((void *)aux);
+	return (NULL);
 }
 
-static void	ft_bzero(void *str, size_t n)
+t_numbers	*ft_free_numbers(t_numbers *numbers)
 {
-	ft_memset(str, 0, n);
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*ptr;
-
-	ptr = (void *)malloc(count * size);
-	if (ptr == 0)
-		return (0);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	free (numbers->value);
+	free (numbers);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:40:54 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 18:07:09 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:42:42 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_move_to_a(t_stack_node *a, t_stack_node *b)
 
 void	ft_init_nodes_b(t_stack_node *a, t_stack_node *b)
 {
-	current_index(a);
-	current_index(b);
-	set_target_b(a, b);
+	ft_current_index(a);
+	ft_current_index(b);
+	ft_set_target_b(a, b);
 }

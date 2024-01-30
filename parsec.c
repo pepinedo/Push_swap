@@ -6,11 +6,104 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:35:27 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 11:40:37 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:42:28 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+long	ft_atolong(const char *str)
+{
+	long	i;
+	long	s;
+	long	res;
+
+	i = 0;
+	s = 1;
+	res = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+		|| str[i] == '\r' || str[i] == '\f' || str[i] == '\v')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			s = s * (-1);
+		i++;
+	}
+	while (ft_isdigit(str[i]) == 1)
+	{
+		res = (res * 10) + (str[i] - '0');
+		i++;
+	}
+	return (res * s);
+}
+
+t_numbers   *ft_atolong_and_check(char **arguments)
+{
+	int         i;
+    t_numbers   *numbers;
+
+	i = 0;
+    while (arguments[i])
+        i++;
+    numbers = (t_numbers *)ft_calloc(sizeof(t_numbers), 1);
+    if (numbers == NULL)
+        return (NULL);
+    numbers->len = i;
+    numbers->value = ft_calloc(i, sizeof(long));
+    i = 0;
+    while (arguments[i])
+    {
+        numbers->value[i] = ft_atolong(arguments[i]);
+        i++;
+    }
+    i = ft_no_dup(numbers->value);
+	i = ft_check_max_min_int(numbers->value);
+    if (i == 0)
+    {
+        numbers = ft_free_numbers(numbers);
+        ft_exit();
+    }
+	return (numbers);
+}
+
+char	**ft_argc2_split(char *s)
+{
+	char	**arguments;
+	
+    if (ft_isallnum(s) == 0)
+	{
+		free(s);
+		ft_exit();
+	}
+    arguments = ft_split(s, ' ');
+	if (arguments == NULL)
+		return (free(arguments), NULL);
+	return (arguments);
+}    
+
+char	**ft_join_split(char **arguments)
+{
+	char*	temp;
+	int		i;
+	
+	i = 1;
+	temp = arguments[i];
+	while (arguments[i + 1])
+	{
+		temp = ft_strjoin(temp, " ");
+		temp = ft_strjoin(temp, arguments[++i]);
+	}
+	if (ft_isallnum(temp) == 0)
+	{
+		free(temp);
+		ft_exit();
+	}
+	arguments = ft_split(temp, ' ');
+	if (arguments == NULL)
+		return (free(arguments), NULL);
+	return (arguments);
+}
 
 t_stack_node	*ft_parsec(int argc, char **argv)
 {

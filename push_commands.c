@@ -6,23 +6,23 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:51:46 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/24 17:27:24 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:50:09 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_stack_node **dest, t_stack_node **source)
+static void	push(t_stack_node *dest, t_stack_node *source)
 {
 	t_stack_node *temp;
 	
-	temp = *source;
-	*source = (*source)->next; 
-	temp->next = *dest; 
-	*dest = temp;
+	temp = source;
+	source = source->next; 
+	temp->next = dest; 
+	dest = temp;
 }
 
-void	pa(t_stack_node **a, t_stack_node **b)
+void	pa(t_stack_node *a, t_stack_node *b)
 {
 	if (!b)
 		return ;
@@ -30,7 +30,7 @@ void	pa(t_stack_node **a, t_stack_node **b)
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_stack_node **b, t_stack_node **a)
+void	pb(t_stack_node *b, t_stack_node *a)
 {
 	if (!a)
 		return ;

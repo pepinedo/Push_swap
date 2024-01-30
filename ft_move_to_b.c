@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:17:08 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 17:13:24 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:42:39 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_prep_for_push(t_stack_node *stack, t_stack_node *top_node, char stack_na
 	}
 }
 
-t_stack_node	*ft_get_cheapest(t_stack_node *stack)
+t_stack_node	*ft_get_the_cheapest(t_stack_node *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -46,13 +46,13 @@ t_stack_node	*ft_get_cheapest(t_stack_node *stack)
 	return (NULL);
 }
 
-void	ft_rev_rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node)
+void	ft_rev_rotate_both(t_stack_node *a, t_stack_node *b, t_stack_node *cheapest_node)
 {
-	while (*b != cheapest_node->target_node
-		&& *a != cheapest_node)
-		rrr(a, b, false); 
-	ft_current_index(*a);
-	ft_current_index(*b);
+	while (b != cheapest_node->target_node
+		&& a != cheapest_node)
+		rrr(a, b); 
+	ft_current_index(a);
+	ft_current_index(b);
 }
 
 void	ft_rotate_both(t_stack_node *a, t_stack_node *b, t_stack_node *cheapest_node)

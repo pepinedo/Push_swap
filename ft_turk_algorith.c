@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:28:47 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 17:15:56 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:42:35 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_min_on_top(t_stack_node *a)
 {
-	while(a->value != find_min(a->value))
+	t_stack_node	*temp;
+
+	temp = ft_find_min(a);
+	while(a->value != temp->value)
 	{
-		if (find_min(a->above_median))
+		if (ft_find_min(a))
 			ra(a);
 		else
 			rra(a);

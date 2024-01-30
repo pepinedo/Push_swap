@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:17:51 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 18:07:46 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:25:16 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	            ft_lstsize(t_stack_node *lst);
 //*** Free functions
 t_numbers	    *ft_free_numbers(t_numbers *numbers);
 void    	    ft_exit();
+t_stack_node	*ft_free_stack(t_stack_node *stack);
 
 //*** Commands functionds
 void            sa(t_stack_node *a);
@@ -87,15 +88,16 @@ t_stack_node	*ft_find_min(t_stack_node *stack);
 void	        ft_turk_algorithm(t_stack_node *a, t_stack_node *b);
 void            ft_init_nodes_a(t_stack_node *a, t_stack_node *b);
 void	        ft_current_index(t_stack_node *stack);
-void	        ft_set_target(t_stack_node *a, t_stack_node *b);
+void	        ft_set_target_a(t_stack_node *a, t_stack_node *b);
 void	        ft_cost_analysis_a(t_stack_node *a, t_stack_node *b);
 void	        ft_set_cheapest(t_stack_node *stack);
 void	        ft_move_to_b(t_stack_node *a, t_stack_node *b);
-t_stack_node	*ft_get_cheapest(t_stack_node *stack);
+t_stack_node	*ft_get_the_cheapest(t_stack_node *stack);
 void	        ft_rotate_both(t_stack_node *a, t_stack_node *b, t_stack_node *cheapest_node);
-void	        ft_rev_rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node);
+void	        ft_rev_rotate_both(t_stack_node *a, t_stack_node *b, t_stack_node *cheapest_node);
 void	        ft_move_to_a(t_stack_node *a, t_stack_node *b);
-
+void	        ft_init_nodes_b(t_stack_node *a, t_stack_node *b);
+void	        ft_prep_for_push(t_stack_node *stack, t_stack_node *top_node, char stack_name);
 void	        ft_min_on_top(t_stack_node *a);
 
 #endif

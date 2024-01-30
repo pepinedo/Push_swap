@@ -6,39 +6,39 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:31:45 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/24 18:33:14 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:50:18 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(t_stack_node **list)
+void	reverse_rotate(t_stack_node *list)
 {
 	t_stack_node *temp;
 	t_stack_node *temp2;
 	
-	temp = *list;
-	while ((*list)->next->next != NULL)
-		*list = (*list)->next;
-	temp2 = (*list)->next;
-	(*list)->next = NULL;
+	temp = list;
+	while (list->next->next != NULL)
+		list = list->next;
+	temp2 = list->next;
+	list->next = NULL;
 	temp2->next = temp;
-	*list = temp2;
+	list = temp2;
 }
 
-void	rra(t_stack_node **a)
+void	rra(t_stack_node *a)
 {
 	reverse_rotate(a);
 	write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack_node **b)
+void	rrb(t_stack_node *b)
 {
 	reverse_rotate(b);
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack_node **a, t_stack_node **b)
+void	rrr(t_stack_node *a, t_stack_node *b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);

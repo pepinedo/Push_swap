@@ -6,37 +6,37 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:33:39 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/24 17:35:27 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:42:23 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_stack_node **list)
+static void	rotate(t_stack_node *list)
 {
 	t_stack_node *temp;
 	
-	temp = *list;
-	while ((*list)->next != NULL)
-		*list = (*list)->next;
-	(*list)->next = temp;
-	*list = (*list)->next;
-	(*list)->next = NULL;
+	temp = list;
+	while (list->next != NULL)
+		list = list->next;
+	list->next = temp;
+	list = list->next;
+	list->next = NULL;
 }
 
-void	ra(t_stack_node **a)
+void	ra(t_stack_node *a)
 {
 	rotate(a);
 	write(1, "ra\n", 3);	
 }
 
-void	rb(t_stack_node **b)
+void	rb(t_stack_node *b)
 {
 	rotate(b);
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_stack_node **a, t_stack_node **b)
+void	rr(t_stack_node *a, t_stack_node *b)
 {
 	rotate(a);
 	rotate(b);

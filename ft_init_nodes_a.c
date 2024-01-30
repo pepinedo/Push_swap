@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 15:49:51 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 17:18:56 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:42:45 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_set_cheapest(t_stack_node *stack)
 	{
 		if (stack->push_cost < cheapest_value)
 		{
-			cheapest_node = stack->push_cost;
+			cheapest_value = stack->push_cost;
 			cheapest_node = stack;
 		}
 		stack = stack->next;
@@ -52,7 +52,7 @@ void	ft_cost_analysis_a(t_stack_node *a, t_stack_node *b)
 	}	
 }
 
-void	ft_set_target(t_stack_node *a, t_stack_node *b)
+void	ft_set_target_a(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_b;
 	t_stack_node	*target_node;

@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:45:45 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/29 17:00:13 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:42:21 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ bool	ft_stack_sorted(t_stack_node *a)
 	return (true);
 }
 
-t_stack_node	*find_min(t_stack_node *stack)
+t_stack_node	*ft_find_min(t_stack_node *stack)
 {
 	long			min;
 	t_stack_node	*min_node;
@@ -45,7 +45,7 @@ t_stack_node	*find_min(t_stack_node *stack)
 	return (min_node);
 }
 
-t_stack_node	*find_max(t_stack_node *stack)
+t_stack_node	*ft_find_max(t_stack_node *stack)
 {
 	long			max;
 	t_stack_node	*max_node;
@@ -69,7 +69,7 @@ void	ft_sort_three(t_stack_node *a)
 {
 	t_stack_node	*the_big_one;
 	
-	the_big_one = find_max(a);
+	the_big_one = ft_find_max(a);
 	if (the_big_one == a)
 		ra(a);
 	else if (a->next == the_big_one)
