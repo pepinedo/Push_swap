@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:45:45 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:21 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:16:34 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,15 @@ t_stack_node	*ft_find_max(t_stack_node *stack)
 	return (max_node);
 }
 
-void	ft_sort_three(t_stack_node *a)
+void	ft_sort_three(t_stack_node **a)
 {
 	t_stack_node	*the_big_one;
 	
-	the_big_one = ft_find_max(a);
-	if (the_big_one == a)
+	the_big_one = ft_find_max(*a);
+	if (the_big_one == *a)
 		ra(a);
-	else if (a->next == the_big_one)
+	else if ((*a)->next == the_big_one)
 		rra(a);
-	if (a->value > a->next->value)
+	if ((*a)->value > (*a)->next->value)
 		sa(a);
 }

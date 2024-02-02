@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:40:54 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:42 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:15:44 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	ft_set_target_b(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-void	ft_move_to_a(t_stack_node *a, t_stack_node *b)
+void	ft_move_to_a(t_stack_node **a, t_stack_node **b)
 {
-	ft_prep_for_push(a, b->target_node, 'a');
+	ft_prep_for_push(a, (*b)->target_node, 'a');
 	pa(a, b);
 }
 

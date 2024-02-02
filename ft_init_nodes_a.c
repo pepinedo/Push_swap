@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 15:49:51 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:45 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:47:25 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_cost_analysis_a(t_stack_node *a, t_stack_node *b)
 		if (a->target_node->above_median)
 			a->push_cost += a->target_node->index;
 		else
-			a->push_cost += len_b - a->target_node->index;
+			a->push_cost += len_b - (a->target_node->index);
 		a = a->next;
 	}	
 }
@@ -60,11 +60,11 @@ void	ft_set_target_a(t_stack_node *a, t_stack_node *b)
 	
 	while(a)
 	{
-		best_match_index = LONG_MIN;
+		best_match_index = LONG_MIN; //el menor
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->value < a->value && current_b->value > best_match_index)
+			if (current_b->value < a->value && current_b->value > best_match_index) 
 			{
 				best_match_index = current_b->value;
 				target_node = current_b;
@@ -72,7 +72,7 @@ void	ft_set_target_a(t_stack_node *a, t_stack_node *b)
 			current_b = current_b->next;
 		}
 		if (best_match_index == LONG_MIN)
-			a->target_node = ft_find_max(b); //cuando no encuentra el numero
+			a->target_node = ft_find_max(b);
 		else
 			a->target_node = target_node;
 		a = a->next;
@@ -87,14 +87,14 @@ void	ft_current_index(t_stack_node *stack)
 	i = 0;
 	if (!stack)
 		return ;
-	median = ft_lstsize(stack) / 2;
+	median = ft_lstsize(stack) / 2; //establecer la mitad
 	while (stack)
 	{
-		stack->index = i;
+		stack->index = i; // establecer la posicion actual
 		if (i <= median)
-			stack->above_median = true;
+			stack->above_median = true; //indicar si está en la primera mitad
 		else
-			stack->above_median = false;
+			stack->above_median = false; //o en la segunda
 		stack = stack->next;
 		i++;
 	}

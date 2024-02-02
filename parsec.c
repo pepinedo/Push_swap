@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:35:27 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:28 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:16:54 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ long	ft_atolong(const char *str)
 		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
+
+	
 	return (res * s);
 }
 
@@ -53,15 +55,14 @@ t_numbers   *ft_atolong_and_check(char **arguments)
     numbers->value = ft_calloc(i, sizeof(long));
     i = 0;
     while (arguments[i])
-    {
+	{
         numbers->value[i] = ft_atolong(arguments[i]);
-        i++;
-    }
-    i = ft_no_dup(numbers->value);
-	i = ft_check_max_min_int(numbers->value);
+		i++;
+	}
+	i = ft_checks_dup_int(numbers->value);
     if (i == 0)
     {
-        numbers = ft_free_numbers(numbers);
+        ft_free_numbers(numbers);
         ft_exit();
     }
 	return (numbers);
@@ -116,6 +117,7 @@ t_stack_node	*ft_parsec(int argc, char **argv)
         argv = ft_argc2_split(argv[1]);
     else if (argc > 2)
         argv = ft_join_split(argv);
-    numbers = ft_atolong_and_check(argv); 
+    numbers = ft_atolong_and_check(argv);
+	
     return (ft_put_in_the_stack(numbers));
 }

@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 13:12:33 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:50 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/30 16:24:43 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ t_stack_node	*ft_free_stack(t_stack_node *stack)
 	return (NULL);
 }
 
-t_numbers	*ft_free_numbers(t_numbers *numbers)
+void	ft_free_numbers(t_numbers *numbers)
 {
 	free (numbers->value);
 	free (numbers);
-	return (NULL);
+	return ;
 }

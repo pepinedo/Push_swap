@@ -6,36 +6,37 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:23:14 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 10:48:45 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:14:45 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_stack_node *list)
+static void	swap(t_stack_node **stack)
 {
-	t_stack_node	*temp;
-	
-	temp = list;
-	list = list->next;
-	temp->next = list->next;
-	list->next = temp;
-	
+	t_stack_node	*aux;
+	t_stack_node	*third;
+
+	third = ((*stack)->next)->next;
+	aux = *stack;
+	*stack = (*stack)->next;
+	aux->next = third;
+	(*stack)->next = aux;
 }
 
-void	sa(t_stack_node *a)
+void	sa(t_stack_node **a)
 {
 	swap(a);
 	write (1, "sa\n", 3);
 }
 
-void	sb(t_stack_node *b)
+void	sb(t_stack_node **b)
 {
 	swap(b);
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack_node *a, t_stack_node *b)
+void	ss(t_stack_node **a, t_stack_node **b)
 {
 	swap(a);
 	swap(b);

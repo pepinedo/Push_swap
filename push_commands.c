@@ -6,36 +6,43 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:51:46 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 10:50:09 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:16:51 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_stack_node *dest, t_stack_node *source)
+void	ft_add_front(t_stack_node **lst, t_stack_node *new)
 {
-	t_stack_node *temp;
-	
-	temp = source;
-	source = source->next; 
-	temp->next = dest; 
-	dest = temp;
+	if (!*lst)
+		*lst = new;
+	else
+	{
+		(new)->next = *lst;
+		*lst = new;
+	}
 }
 
-void	pa(t_stack_node *a, t_stack_node *b)
+void	push(t_stack_node **dst, t_stack_node **to_add)
 {
-	if (!b)
-		return ;
-	push(a, b);
-	write(1, "pa\n", 3);
+	t_stack_node	*aux;
+
+	aux = (*to_add)->next;
+	(*to_add)->next = NULL;
+	ft_add_front(dst, *to_add);
+	*to_add = aux;
 }
 
-void	pb(t_stack_node *b, t_stack_node *a)
+void	pb(t_stack_node **a, t_stack_node **b)
 {
-	if (!a)
-		return ;
 	push(b, a);
 	write(1, "pb\n", 3);
+}
+
+void	pa(t_stack_node **a, t_stack_node **b)
+{
+	push(a, b);
+	write(1, "pa\n", 3);
 }
 
 //  void	print(t_stack_node *a)

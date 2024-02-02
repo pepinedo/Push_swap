@@ -6,7 +6,7 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:18:02 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:30 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:53:32 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ static void ft_printea_stacks(t_stack_node *a)
     }
 }
 
-void	ft_sort_argorithm(t_stack_node *a, t_stack_node *b)
+void	ft_sort_argorithm(t_stack_node **a, t_stack_node **b)
 {
-	if (!ft_stack_sorted(a))
+	if (!ft_stack_sorted(*a))
 	{
-		if (ft_lstsize(a) == 2)
+		if (ft_lstsize(*a) == 2)
 			sa(a);
-		else if (ft_lstsize(a) == 3)
+		else if (ft_lstsize(*a) == 3)
 			ft_sort_three(a);
-		else
-			ft_turk_algorithm(a, b);	
+    	else
+		    ft_turk_algorithm(a, b);
 	}
 }
 
@@ -42,10 +42,14 @@ int main(int argc, char **argv)
     a = NULL;
     b = NULL;
     a = ft_parsec(argc, argv);
-    ft_printea_stacks(a);
-    ft_sort_argorithm(a, b);
+    
+    ft_printea_stacks(a); //NUMERO :
+
+    ft_sort_argorithm(&a, &b);
+    
     printf("-*-*-*-\n");
     ft_printea_stacks(a);
+    
     //a = ft_free_stack(a);
     return (0); 
 }

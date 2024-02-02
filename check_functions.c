@@ -6,11 +6,24 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 10:19:12 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:52 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/01/31 12:45:52 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_checks_dup_int(long*	array)
+{
+	int i;
+
+	i = ft_no_dup(array);
+	if (i == 0)
+		return (0);
+	i = ft_check_max_min_int(array);
+	if (i == 0)
+		return (0);
+	return (1);
+}	
 
 int	ft_isallnum(char* array)
 {

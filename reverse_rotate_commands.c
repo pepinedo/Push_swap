@@ -6,39 +6,45 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:31:45 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 10:50:18 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:45:05 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(t_stack_node *list)
+t_stack_node	*ft_penultimate(t_stack_node *lst)
 {
-	t_stack_node *temp;
-	t_stack_node *temp2;
-	
-	temp = list;
-	while (list->next->next != NULL)
-		list = list->next;
-	temp2 = list->next;
-	list->next = NULL;
-	temp2->next = temp;
-	list = temp2;
+	if (!lst)
+		return (NULL);
+	while (lst->next && (lst->next)->next)
+		lst = lst->next;
+	return (lst);
 }
 
-void	rra(t_stack_node *a)
+void	reverse_rotate(t_stack_node **stack)
+{
+	t_stack_node	*last;
+	t_stack_node	*penultimate;
+
+	last = ft_last(*stack);
+	penultimate = ft_penultimate(*stack);
+	ft_add_front(stack, last);
+	penultimate->next = NULL;
+}
+
+void	rra(t_stack_node **a)
 {
 	reverse_rotate(a);
 	write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack_node *b)
+void	rrb(t_stack_node **b)
 {
 	reverse_rotate(b);
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack_node *a, t_stack_node *b)
+void	rrr(t_stack_node **a, t_stack_node **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
@@ -73,6 +79,8 @@ void	rrr(t_stack_node *a, t_stack_node *b)
 // 	nodeB->next = nodeC;
 // 	nodeC->next = nodeD;
 // 	nodeD->next = NULL;
+// 	print (nodea);
+// 	printf ("\n");
 
 // 	node1->value = 1;
 // 	node2->value = 2;
@@ -82,11 +90,13 @@ void	rrr(t_stack_node *a, t_stack_node *b)
 // 	node2->next = node3;
 // 	node3->next = node4;
 // 	node4->next = NULL;
+// 	print (node1);
+// 	printf ("\n");
 	
+// 	reverse_rotate(&nodea);
 // 	print (nodea);
 // 	printf ("\n");
-// 	reverse_rotate(&nodea);
-// 	print (nodeD);
+// 	print (node1);
 // 	printf ("\n");
 // 	return (0);
 // }
