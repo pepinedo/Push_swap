@@ -6,21 +6,21 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 13:12:33 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/02/05 13:00:38 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:41:49 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
-void	ft_exit()
+void	ft_exit(void)
 {
-    write(STDERR_FILENO, "Error\n", 6);
-    exit (1);
+	write (2, "Error\n", 6);
+	exit (1);
 }
 
-void	ft_free_ptrstr(char** str)
+void	ft_free_ptrstr(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -34,6 +34,7 @@ void	ft_free_ptrstr(char** str)
 t_stack_node	*ft_free_stack(t_stack_node *stack)
 {
 	t_stack_node	*temp;
+
 	while (stack)
 	{
 		temp = stack->next;

@@ -3,7 +3,6 @@
 NAME = push_swap
 B_NAME = checker
 INCLUDE = include
-LIBFT = lib/libft
 SRC_DIR = src/
 B_SRC_DIR = src/bonus/
 OBJ_DIR = obj/
@@ -25,23 +24,23 @@ WHITE = \033[0;97m
 
 #Sources
 	
-SRC_FILES = check_functions.c \
-			free_functions.c \
-			ft_calloc.c \
-			ft_init_nodes_a.c \
-			ft_move_to_a.c \
-			ft_move_to_b.c \
-			ft_split.c \
-			ft_turk_algorithm.c \
-			list_functions.c \
-			main.c \
-			parsec.c \
-			push_commands.c \
-			reverse_rotate_commands.c \
-			rotate_commands.c \
-			sort_functions.c \
-			str_utils.c \
-			swap_commands.c \
+SRC_FILES = check_functions \
+			free_functions \
+			ft_calloc \
+			ft_init_nodes_a \
+			ft_move_to_a \
+			ft_move_to_b \
+			ft_split \
+			ft_turk_algorithm \
+			list_functions \
+			main \
+			parsec \
+			push_commands \
+			reverse_rotate_commands \
+			rotate_commands \
+			sort_functions \
+			str_utils \
+			swap_commands \
 
 B_SRC_FILES = 
 
@@ -56,9 +55,8 @@ OBJF = .cache_exists
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			@make -C $(LIBFT)
-			@$(CC) -I./$(INCLUDE) $(CFLAGS) $(OBJ) -L$(LIBFT) -lft -o $(NAME)
-			@echo "$(GREEN)$(NAME) compiled!$(DEF_COLOR)"
+			@$(CC) -I./$(INCLUDE) $(CFLAGS) $(OBJ) -o $(NAME)
+			@echo "$(GREEN)✅$(NAME) COMPILED!✅$(DEF_COLOR)"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
 			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
@@ -73,25 +71,24 @@ $(OBJF):
 
 clean:
 			@rm -rf $(OBJ_DIR)
-			@make clean -C $(LIBFT)
-			@echo "$(BLUE)$(NAME) object files cleaned!$(DEF_COLOR)"
+			@echo "$(BLUE)🧼$(NAME) object files cleaned!🧼$(DEF_COLOR)"
 
 fclean:		
 			@rm -rf $(OBJ_DIR)
 			@rm -f $(NAME)
 			@rm -f $(B_NAME)
-			@make fclean -C $(LIBFT)
-			@echo "$(BLUE)$(NAME) executable cleaned!$(DEF_COLOR)"
+			@echo "$(BLUE)🧼$(NAME) executable cleaned!🧼$(DEF_COLOR)"
 
 re:			fclean all
-			@echo "$(MAGENTA)$(NAME) recompiled!$(DEF_COLOR)"
+			@echo "$(MAGENTA)📦$(NAME) recompiled!📦$(DEF_COLOR)"
 
 norm:
 			@norminette $(SRC) $(B_SRC) $(INCLUDE) $(LIBFT)
+			@echo "$(GREEN) ✅NORMINETTE OK!✅$(DEF_COLOR)"
 
 bonus: $(B_OBJ)
 			@make -C $(LIBFT)
 			@$(CC) $(CFLAGS) $(B_OBJ) -L$(LIBFT) -lft -o $(B_NAME)
-			@echo "$(MAGENTA)$(B_NAME) compiled!$(DEF_COLOR)"
+			@echo "$(MAGENTA)$(B_NAME) ✅compiled!✅$(DEF_COLOR)"
 
 .PHONY: all clean fclean re norm bonus

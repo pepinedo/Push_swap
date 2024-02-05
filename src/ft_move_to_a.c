@@ -6,11 +6,11 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:40:54 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/02/01 16:15:44 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:45:20 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
 void	ft_set_target_b(t_stack_node *a, t_stack_node *b)
 {
@@ -24,7 +24,8 @@ void	ft_set_target_b(t_stack_node *a, t_stack_node *b)
 		current_a = a;
 		while (current_a)
 		{
-			if (current_a->value > b->value && current_a->value <best_match_index)
+			if (current_a->value > b->value
+				&& current_a->value < best_match_index)
 			{
 				best_match_index = current_a->value;
 				target_node = current_a;

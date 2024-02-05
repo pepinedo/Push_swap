@@ -6,11 +6,11 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:26:26 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:17 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:55:14 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
 size_t	ft_strlen(const char *str)
 {

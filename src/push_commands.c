@@ -6,11 +6,11 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:51:46 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/31 13:16:51 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:52:15 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
 void	ft_add_front(t_stack_node **lst, t_stack_node *new)
 {
@@ -54,7 +54,7 @@ void	pa(t_stack_node **a, t_stack_node **b)
 // 	}
 // }
 
-// int	main()
+// int	main(void)
 // {
 // 	t_stack_node *nodea = malloc(sizeof(t_stack_node));
 // 	t_stack_node *nodeB = malloc(sizeof(t_stack_node));
@@ -77,7 +77,7 @@ void	pa(t_stack_node **a, t_stack_node **b)
 // 	node1->next = node2;
 // 	node2->next = node3;
 // 	node3->next = NULL;
-	
+
 // 	print (nodea);
 // 	printf ("\n");
 // 	push(&nodea, &node1);

@@ -6,11 +6,11 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:23:14 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/31 13:14:45 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:55:24 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
 static void	swap(t_stack_node **stack)
 {
@@ -27,7 +27,7 @@ static void	swap(t_stack_node **stack)
 void	sa(t_stack_node **a)
 {
 	swap(a);
-	write (1, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack_node **b)
@@ -52,7 +52,7 @@ void	ss(t_stack_node **a, t_stack_node **b)
 // 	}
 // }
 
-// int	main()
+// int	main(void)
 // {
 // 	t_stack_node *nodea = malloc(sizeof(t_stack_node));
 // 	t_stack_node *nodeB = malloc(sizeof(t_stack_node));

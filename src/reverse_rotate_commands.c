@@ -6,11 +6,11 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:31:45 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/02/01 13:45:05 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:52:40 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
 t_stack_node	*ft_penultimate(t_stack_node *lst)
 {
@@ -60,7 +60,7 @@ void	rrr(t_stack_node **a, t_stack_node **b)
 // 	}
 // }
 
-// int	main()
+// int	main(void)
 // {
 // 	t_stack_node *nodea = malloc(sizeof(t_stack_node));
 // 	t_stack_node *nodeB = malloc(sizeof(t_stack_node));
@@ -92,7 +92,7 @@ void	rrr(t_stack_node **a, t_stack_node **b)
 // 	node4->next = NULL;
 // 	print (node1);
 // 	printf ("\n");
-	
+
 // 	reverse_rotate(&nodea);
 // 	print (nodea);
 // 	printf ("\n");

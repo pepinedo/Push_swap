@@ -6,15 +6,15 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:28:47 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/02/02 13:55:01 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:49:48 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
 void	ft_min_on_top(t_stack_node **a)
 {
-	while((*a)->value != ft_find_min(*a)->value && !ft_stack_sorted(*a))
+	while ((*a)->value != ft_find_min(*a)->value && !ft_stack_sorted(*a))
 	{
 		if (ft_find_min(*a)->above_median)
 			ra(a);
@@ -26,11 +26,11 @@ void	ft_min_on_top(t_stack_node **a)
 void	ft_turk_algorithm(t_stack_node **a, t_stack_node **b)
 {
 	int	len;
-	
+
 	len = ft_lstsize(*a);
 	if (len-- > 3 && !ft_stack_sorted(*a))
 		pb(a, b);
-	if (len-- > 3 && !ft_stack_sorted(*a)) 
+	if (len-- > 3 && !ft_stack_sorted(*a))
 		pb(a, b);
 	while (len-- > 3 && !ft_stack_sorted(*a))
 	{
@@ -38,7 +38,7 @@ void	ft_turk_algorithm(t_stack_node **a, t_stack_node **b)
 		ft_move_to_b(a, b);
 	}
 	ft_sort_three(a);
-	while(*b)
+	while (*b)
 	{
 		ft_init_nodes_b(*a, *b);
 		ft_move_to_a(a, b);

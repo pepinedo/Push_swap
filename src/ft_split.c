@@ -6,11 +6,11 @@
 /*   By: ppinedo- <ppinedo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:18:08 by ppinedo-          #+#    #+#             */
-/*   Updated: 2024/01/30 11:42:37 by ppinedo-         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:47:05 by ppinedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
 static size_t	ft_wordscount(const char *s, char c)
 {
@@ -48,9 +48,9 @@ static void	ft_freeall(char **s)
 
 static void	ft_splitaux(char **splits, char const *s, char c)
 {
-	int		i;
-	int		start;
-	int		j;
+	int	i;
+	int	start;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -76,7 +76,8 @@ char	**ft_split(char const *s, char separator)
 {
 	char	**splits;
 
-	splits = (char **)malloc(sizeof(char *) * (ft_wordscount(s, separator) + 1));
+	splits = (char **)malloc(sizeof(char *) * (ft_wordscount(s, separator)
+				+ 1));
 	if (splits == NULL)
 		return (NULL);
 	ft_splitaux(splits, s, separator);
